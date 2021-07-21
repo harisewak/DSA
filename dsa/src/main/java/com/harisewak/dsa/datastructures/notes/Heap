@@ -1,0 +1,5 @@
+It is a tree based data strucuture that satisfies the heap invariant (heap property)
+ meaning if A is the parent node and B is its child then A is ordered w.r.t B for all nodes, A & B
+  in the heap.
+This means A is either greater than equal to its child or smaller than or equal to it. Former is
+called max heap and later is called min heap.

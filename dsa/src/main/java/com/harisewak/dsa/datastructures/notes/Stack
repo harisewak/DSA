@@ -1,0 +1,24 @@
+Stack - one ended linear data structure
+Has operations push & pop
+Mimics real world stacks
+
+e.g. find valid string containing complementary brackets
+valid - {{[]}}
+invalid - {[}]
+
+
+Idea :
+    first one an open bracket? add
+    next its complementary bracket or another open bracket, valid else invalid
+
+
+Pseudocode :
+
+function is_seq_valid(sequence):
+    isEmpty ? return valid
+    chop it into chars
+    iterate through chars
+    is open bracket ? add to stack
+    is closed bracket ? pop and check if its complementary, return invalid if not
+    iterate through all chars
+    if sequence is empty, return valid else return invalid

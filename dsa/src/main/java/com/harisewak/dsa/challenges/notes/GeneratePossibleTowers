@@ -1,0 +1,31 @@
+indices // high/low
+
+0 - 3 // high
+4 - 7 // low
+8 - 11 // high
+12 - 15 // low
+16 - 19 // high
+20 - 23 // low
+24 - 27 // high
+28 - 31 // low
+
+//examples
+
+15 + 1 // low
+16/4 = 4
+16%4 = 0
+
+21 + 1 // low
+22/4 = 5
+22%4 = 2
+
+30 + 1 // low
+31/4 = 7
+
+0 + 1 // high
+1/4 = 0
+
+quotient is even & remainder is 0 = low
+quotient is odd & remainder > 0 = low
+quotient is even & remainder > 0 = high
+quotient is odd & remainder is 0 = high

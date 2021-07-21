@@ -1,0 +1,72 @@
+array of N integers - positive, negative, zero
+find subarray (min one element) with maximum product
+
+Arr[] = {2, 3, 4, 5, -1, 0}
+Output: 120
+
+
+
+if arr size is 1, return first value
+if not, check if negative count is odd
+if so, if it is one, treat it as 0
+
+
+if arr.length == 1:
+    return arr[0]
+
+max_till_now = 0
+max = 0
+
+// find negative boundaries
+negative_boundaries = []
+boundary_index = 0
+negative_count = 0
+start_negative = -1
+end_negative = -1
+
+for arr 0 to n:
+  if arr[i] < 0:
+    if start_negative == -1:
+        start_negative = i
+    else if end_negative == -1:
+        end_negative = i
+    negative_count++
+
+  if arr[i] == 0:
+    if negative_count == 1:
+        arr[start_negative] = 0
+    else if negative_count % 2 != 0:
+        negative_boundaries[boundary_index++] = start_negative
+        negative_boundaries[boundary_index++] = end_negative
+        start_negative = -1
+        end_negative = -1
+        negative_count = 0
+
+if negative_boundaries.length > 0:
+    boundary_index = 0
+
+// calculate max when odd negatives (>1) are present in subarray
+while boundary_index < negative_boundaries.length:
+    start_boundary = calculate boundary before negative_boundaries[boundary_index]
+    end_boundary = negative_boundaries[boundary_index+1] - 1
+    max_till_now = multiply start_boundary until before negative_boundaries[boundary_index+1]
+    if max_till_now > max:
+        max = max_till_now
+    start_boundary = negative_boundaries[boundary_index]+1
+    end_boundary = calculate boundary after negative_boundaries[boundary_index+1]
+    max_till_now = multiply after negative_boundaries[boundary_index] till negative_boundaries[boundary_index+1]
+    if max_till_now > max:
+        max = max_till_now
+    boundary_index += 2
+
+max_till_now = 0
+for arr 0 to n:
+    if (max_till_now == 0):
+        max_till_now = 1
+    max_till_now = max_till_now * arr[i]
+    if (max_till_now > max):
+        max = max_till_now
+
+return max
+
+

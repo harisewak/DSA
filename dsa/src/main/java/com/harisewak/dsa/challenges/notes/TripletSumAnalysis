@@ -1,0 +1,23 @@
+in outer loop :
+Found at statement no. 8
+Found at statement no. 249
+Found at statement no. 9
+Found at statement no. 7
+
+in inner loop (before check) :
+Found at statement no. 3
+Found at statement no. 79
+Found at statement no. 3
+Found at statement no. 4
+
+in inner loop (after check) :
+Found at statement no. 3
+Found at statement no. 79
+Found at statement no. 5
+Found at statement no. 4
+
+including set filling :
+Found at statement no. 6
+Found at statement no. 102
+Found at statement no. 6
+Found at statement no. 7

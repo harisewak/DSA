@@ -1,0 +1,8 @@
+array of integers
+target sum
+find sum pairs
+
+store distinct values as keys and their count as value in a map
+check for its complementary, if found increment count
+skip own check
+divide count by 2 and return the result

@@ -1,0 +1,26 @@
+LinkedList is a data structure which holds a collection of elements in non-contiguous memory locations.
+Due to its ability to store elements at non-contiguous locations, adding an element is efficient and takes constant time (O(1))
+Able to effectively simulate real world objects e.g. trains
+
+Two types -
+
+1) Singly Linked List : Each element contains a pointer to the next element. The last element points to NULL
+2) Doubly Linked List : Each element contains a pointer to both previous and next elements.
+
+Sample implementation -
+
+LinkedList {
+    Node head;
+    Node tail;
+    int size;
+
+    Node<T> {
+        T data;
+        Node next;
+
+        Node(T data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+    }
+}

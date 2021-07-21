@@ -1,0 +1,12 @@
+Follows LIFO
+
+Create it based on linked list
+support push and pop operations
+
+push operation happens at the top
+
+function push:
+    set prev of head as this element
+    set prev of this element as NULL
+    set next of this element as head
+    set this element as head
