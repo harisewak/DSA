@@ -4,49 +4,44 @@ import com.harisewak.dsa.challenges.Print;
 
 public class RemoveDuplicates {
 
-    public int[] removeDuplicates(int[] nums) {
-        int compareIndex = 0;
-        int withIndex = 1;
-        int pushTo = withIndex+1;
+    public int removeDuplicates(int[] nums) {
+        // go through the array
+        // if next element is greater than current element, keep going
+        // if they are equal, push the next element to the end
+        // if the next element is less, exit and return
 
-        while (withIndex < nums.length) {
+        int curElementIndex = 0;
+        int nextElementIndex = 1;
+        int k = 1;
 
-            int compare = nums[compareIndex];
-            int with = nums[withIndex];
+        while (nextElementIndex < nums.length) {
 
-            if (compare == with) {
-                // elements have been pushed till the end, no more elements left
-                if (pushTo > nums.length - 1) {
-                    return nums;
-                }
-                pushBehind(nums,withIndex, pushTo);
-                pushTo++;
+            int curElement = nums[curElementIndex];
+            int nextElement = nums[nextElementIndex];
+
+            if (nextElement > curElement) {
+               curElementIndex++;
+               nextElementIndex++;
+            } else if (nextElement == curElement) {
+                // push next element to the end
+                pushToTheEnd(nums, nextElementIndex);
             } else {
-
-                if (pushTo <= nums.length - 1) {
-                    if (compareIndex != withIndex + 1) {
-                        int temp = nums[withIndex + 1];
-                        nums[withIndex+1] = nums[pushTo];
-                        nums[pushTo] = temp;
-                    }
-                }
-
-                compareIndex++;
-                withIndex = pushTo;
-                pushTo++;
+                break;
             }
 
-            Print.ln("compareIndex withIndex pushTo", compareIndex, withIndex, pushTo);
+            k++;
 
         }
 
-        return nums;
+        return k;
     }
 
-    private void pushBehind(int[] nums, int withIndex, int pushTo) {
-        int temp = nums[pushTo];
-        nums[pushTo] = nums[withIndex];
-        nums[withIndex] = temp;
+    private void pushToTheEnd(int[] arr, int itemIndex) {
+        int temp = arr[itemIndex];
+        for (int i = itemIndex; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = temp;
     }
 
 }

@@ -6,6 +6,10 @@ public class DoublyLinkedList {
     Node tail;
     private int size;
 
+    public DoublyLinkedList() {
+        // empty constructor
+    }
+
     public static class Node<T> {
         T data;
         Node next;

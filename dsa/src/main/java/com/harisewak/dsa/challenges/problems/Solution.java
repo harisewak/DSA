@@ -658,6 +658,54 @@ class Solution {
         return new int[]{-1, -1};
     }
 
+    /*
+* Iterate through nums
+Run another loop inside it
+add elements at i and j and check if sum is equal to target
+return i and j if they do
+* */
+    public static int[] twoSumOg(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+
+        return new int[]{-1, -1};
+    }
+
+    /*
+     * Store all elements in hashmap with indices as keys and elements as values
+     * Check if current element's compliment (target - curElement) is present in hashmap
+     * if true, return curElement's index and compliment's key
+     * */
+    public static int[] twoSumTwo(int[] nums, int target) {
+        Map<Integer, Integer> hashMap = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            hashMap.put(nums[i], i);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int compliment = target - nums[i];
+
+            if (hashMap.containsKey(compliment)) {
+                Integer compElIndex = hashMap.get(compliment);
+                // ignoring same index
+                if (i == compElIndex) {
+                    continue;
+                }
+
+                return new int[]{i, compElIndex};
+            }
+        }
+
+        return new int[]{-1, -1};
+    }
+
     ;
 
     public static void sort012(int a[], int n) {
